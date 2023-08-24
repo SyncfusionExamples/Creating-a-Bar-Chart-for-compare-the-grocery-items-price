@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:local="clr-namespace:ComparisonOfGroceryItemsDemo"
+             x:Class="ComparisonOfGroceryItemsDemo.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:ViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+        <Border  StrokeShape="RoundRectangle 20" 
+                 StrokeThickness="4"
+                 Stroke="Gray"
+                 Margin="20">
+           
+            <Grid ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+               
+                <Label Grid.Row="0"
+                       Grid.ColumnSpan="2"
+                       Text="Creating a Horizontal Bar Chart to Compare Grocery Item Prices of Two Countries"
+                       TextColor="Black" 
+                       FontSize="16"
+                       FontFamily="TimeSpan"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Start"
+                       Padding="350,5,0,0"/>
+              
+
+                <!--US Chart -->
+                <chart:SfCartesianChart Grid.Row="1"
+                                        Grid.Column="0" 
+                                        IsTransposed="True"
+                                        Margin="{OnPlatform Android=5,Default='0,20,0,0'}">
+                    <chart:SfCartesianChart.XAxes>
+                        <chart:CategoryAxis IsInversed="True"
+                                            ShowMajorGridLines="False">
+                            <chart:CategoryAxis.LabelStyle>
+                                <chart:ChartAxisLabelStyle TextColor="#49454F" 
+                                                           FontSize="12"
+                                                           LabelAlignment="Center"/>
+                            </chart:CategoryAxis.LabelStyle>
+                            <chart:CategoryAxis.AxisLineStyle>
+                                <chart:ChartLineStyle StrokeWidth ="0"/>
+                            </chart:CategoryAxis.AxisLineStyle>
+                            <chart:CategoryAxis.MajorTickStyle>
+                                <chart:ChartAxisTickStyle Stroke="#C5C8CE"/>
+                            </chart:CategoryAxis.MajorTickStyle>
+                        </chart:CategoryAxis>
+                    </chart:SfCartesianChart.XAxes>
+
+                    <chart:SfCartesianChart.YAxes>
+                        <chart:NumericalAxis IsInversed="True" 
+                                             ShowMajorGridLines="False"
+                                             Maximum="18"
+                                             IsVisible="False">
+                        </chart:NumericalAxis>
+                    </chart:SfCartesianChart.YAxes>
+
+                    <chart:SfCartesianChart.Legend>
+                        <chart:ChartLegend />
+                    </chart:SfCartesianChart.Legend>
+
+                    <chart:ColumnSeries ItemsSource="{Binding GroceryPriceDetails}" 
+                                        XBindingPath="GroceryItems"
+                                        YBindingPath="USPrice" 
+                                        Fill="#CD6688"
+                                        ShowDataLabels="True"
+                                        Label="United States (US)">
+                        <chart:ColumnSeries.DataLabelSettings>
+                            <chart:CartesianDataLabelSettings LabelPlacement="Outer" >
+                                <chart:CartesianDataLabelSettings.LabelStyle>
+                                    <chart:ChartDataLabelStyle LabelFormat="0.00'$"
+                                                               Background="White"/>
+                                </chart:CartesianDataLabelSettings.LabelStyle>
+                            </chart:CartesianDataLabelSettings>
+                        </chart:ColumnSeries.DataLabelSettings>
+                    </chart:ColumnSeries>
+                </chart:SfCartesianChart>
+
+                <!--#endregion-->
+
+                <!--UK chart-->
+
+                <chart:SfCartesianChart Grid.Column="1" 
+                                        Grid.Row="1"
+                                        IsTransposed="True"
+                                        Margin="{OnPlatform Android=0,Default='0,20,0,0'}">
+
+                    <chart:SfCartesianChart.XAxes>
+                        <chart:CategoryAxis ShowMajorGridLines="False"
+                                            IsInversed="True">
+                            <chart:CategoryAxis.LabelStyle>
+                                <chart:ChartAxisLabelStyle TextColor="Transparent"
+                                                           FontSize="1"
+                                                           Margin="-5"/>
+                            </chart:CategoryAxis.LabelStyle>
+                            <chart:CategoryAxis.AxisLineStyle>
+                                <chart:ChartLineStyle StrokeWidth ="0"/>
+                            </chart:CategoryAxis.AxisLineStyle>
+                            <chart:CategoryAxis.MajorTickStyle>
+                                <chart:ChartAxisTickStyle Stroke="#C5C8CE"/>
+                            </chart:CategoryAxis.MajorTickStyle>
+                        </chart:CategoryAxis>
+                    </chart:SfCartesianChart.XAxes>
+
+                    <chart:SfCartesianChart.YAxes>
+                        <chart:NumericalAxis IsVisible="False"
+                                             ShowMajorGridLines="False"
+                                             Maximum="10">
+                        </chart:NumericalAxis>
+                    </chart:SfCartesianChart.YAxes>
+
+                    <chart:SfCartesianChart.Legend>
+                        <chart:ChartLegend/>
+                    </chart:SfCartesianChart.Legend>
+
+                    <chart:ColumnSeries ItemsSource="{Binding GroceryPriceDetails}" 
+                                      XBindingPath="GroceryItems" 
+                                      YBindingPath="UKPrice" 
+                                      Fill="#AED8CC"
+                                      ShowDataLabels="True"
+                                      Label="United Kingdom (UK)">
+                        <chart:ColumnSeries.DataLabelSettings>
+                            <chart:CartesianDataLabelSettings LabelPlacement="Outer">
+                                <chart:CartesianDataLabelSettings.LabelStyle>
+                                    <chart:ChartDataLabelStyle LabelFormat="0.00'£"
+                                                               Background="White"/>
+                                </chart:CartesianDataLabelSettings.LabelStyle>
+                            </chart:CartesianDataLabelSettings>
+                        </chart:ColumnSeries.DataLabelSettings>
+                    </chart:ColumnSeries>
+
+                </chart:SfCartesianChart>
+
+                <!--#endregion-->
+
+
+            </Grid>
+        </Border>
+    </ContentPage.Content>
+</ContentPage>
