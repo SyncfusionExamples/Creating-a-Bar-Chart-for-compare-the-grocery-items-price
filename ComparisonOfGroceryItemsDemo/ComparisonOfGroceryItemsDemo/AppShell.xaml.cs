@@ -1,9 +1,10 @@
-﻿namespace ComparisonOfGroceryItemsDemo;
-
-public partial class AppShell : Shell
+﻿namespace ComparisonOfGroceryItemsDemo
 {
-	public AppShell()
-	{
-		InitializeComponent();
-	}
+    public partial class AppShell : Shell
+    {
+        public AppShell()
+        {
+            InitializeComponent();
+        }
+    }
 }
