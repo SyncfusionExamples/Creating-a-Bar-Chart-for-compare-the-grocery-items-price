@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.0.31611.283
+VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComparisonOfGroceryItemsDemo", "ComparisonOfGroceryItemsDemo\ComparisonOfGroceryItemsDemo.csproj", "{A5B3D2F7-B200-4AE6-B744-947EA67E8941}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComparisonOfGroceryItemsDemo", "ComparisonOfGroceryItemsDemo\ComparisonOfGroceryItemsDemo.csproj", "{A06A0DD6-43B2-4B47-A65C-60F206C99342}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,17 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A5B3D2F7-B200-4AE6-B744-947EA67E8941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5B3D2F7-B200-4AE6-B744-947EA67E8941}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5B3D2F7-B200-4AE6-B744-947EA67E8941}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{A5B3D2F7-B200-4AE6-B744-947EA67E8941}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5B3D2F7-B200-4AE6-B744-947EA67E8941}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A5B3D2F7-B200-4AE6-B744-947EA67E8941}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A06A0DD6-43B2-4B47-A65C-60F206C99342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A06A0DD6-43B2-4B47-A65C-60F206C99342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A06A0DD6-43B2-4B47-A65C-60F206C99342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A06A0DD6-43B2-4B47-A65C-60F206C99342}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+		SolutionGuid = {B4FE5FAC-AA7C-449C-96CC-AC9ADB773F4F}
 	EndGlobalSection
 EndGlobal
